@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // In Traditional ways: we first creat a p element using document.creatElement and then we add text inside p element using .innerText
+    // or .textContent and then get root element from html file to js file and then append p tag to root element.In 
+    // traditional approach we define each and every step manually.
+
+    // In React: we write code in JSX. In JSX we directly write html code in js file like here we directly wrote <p>Seize the day</p>
+    // inside js file and then render it inside root element. Here we don't have to manually creat and append html element instead we
+    //  declare whatever UI we need and react(using babel) automatically converts our JSX code into JS behind the scenes.
+        function Comp(){
+          return <p>Seize the day</p>
+        }
+      // here first we are creating root element using react.createRoot
+        const reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+        reactRoot.render(<Comp/>) // here we are rendering functional component using react render method.
+  </script>
+</html>

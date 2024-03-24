@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // here first we are creating root element using react.createRoot
+      const reactRoot = ReactDOM.createRoot(document.getElementById('root'));
+      function Comp(){
+        let txt = "Seize the day";
+        let flag = true; 
+        //  In first case we are rendering a paragraph tag using JSX.
+        //  In second case we are rendering content of paragraph tag dynamically using JSX.
+        //  In third case we are rendering paragraph tag conditionally using ternary operator, we defined a flag variable and the 
+        //  if flag is true we are showing paragraph that's on left side of colon and if it is false then we are showing that's on 
+        //  right side of colon.
+
+        return <>
+                <p>Seize the day</p> 
+                <p>{txt}</p>
+                <div id ="root"> 
+                     {flag ? <p> Hi, I am rendering conditionally </p> : <p>Hello</p>}   
+                </div>
+        </>
+      }
+      reactRoot.render(<Comp/>) // here we are rendering comp functional component using react render method.
+    </script>
+  </body>
+</html>
